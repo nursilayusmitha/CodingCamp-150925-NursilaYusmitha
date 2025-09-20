@@ -1,6 +1,6 @@
 # DailyDo - To-Do List App
 
-![DailyDo Logo](https://public/logo.png)
+![DailyDo Logo](/public/logo.png)
 
 **DailyDo** adalah aplikasi to-do list interaktif yang dirancang untuk membantu Anda mengelola tugas sehari-hari dengan lebih efisien.  
 Dibangun sebagai proyek tugas untuk **Coding Camp RevoU**.
@@ -69,3 +69,4 @@ Silakan gunakan dan modifikasi sesuai kebutuhan.
 
 ## ⭐ Dukungan
 Jika Anda menemukan proyek ini bermanfaat, jangan lupa **beri bintang di GitHub**! ⭐
+
