@@ -1,228 +1,435 @@
-
-      .header-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
+/* Mengatur scroll vertikal pada mobile */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      body, html {
+        overflow-y: auto;
       }
+    }
 
-      .site-title {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+    .container {
+      max-width: 100%;
+    }
 
-      .site-title img {
-        width: 32px;
-        height: 32px;
-        object-fit: contain;
-      }
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
 
+    .site-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .site-title img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .datetime-inline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .datetime-inline .day {
+      min-width: 90px;
+      text-align: left;
+    }
+
+    /* status badges */
+    .status-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-overdue {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.2);
+    }
+
+    .status-complete {
+      background: rgba(34,197,94,0.1);
+      color: #22c55e;
+      border: 1px solid rgba(34,197,94,0.15);
+    }
+
+    .status-pending {
+      background: rgba(245,158,11,0.08);
+      color: #f59e0b;
+      border: 1px solid rgba(245,158,11,0.12);
+    }
+
+    /* small responsive tweaks for table due column */
+    .due-date-cell {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* make modal inputs full width on small screens */
+    @media (max-width: 640px) {
       .datetime-inline {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 600;
+        font-size: 14px;
       }
+    }
 
-      .datetime-inline .day {
-        min-width: 90px;
-        text-align: left;
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .site-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .site-title img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .datetime-inline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    /* Perbaikan header tabel agar tidak bergerak saat di-scroll horizontal */
+    .table-container thead th {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 20;
+      white-space: nowrap;
+    }
+
+    /* Style header tabel yang lebih bagus */
+    .table-container thead th {
+      background-color: #4f46e5;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .table-container tbody td {
+      padding: 0.75rem 1rem;
+      vertical-align: middle;
+    }
+
+    /* status badges */
+    .status-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-overdue {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.2);
+    }
+
+    .status-complete {
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.15);
+    }
+
+    .status-pending {
+      background: rgba(245, 158, 11, 0.08);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.12);
+    }
+
+    .due-date-cell {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 640px) {
+      .datetime-inline {
+        font-size: 14px;
       }
+    }
 
-      /* status badges */
-      .status-badge {
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
+    /* Header */
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .site-title img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .datetime-inline {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    /* Table */
+    .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    /* Status badges */
+    .status-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-overdue {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.2);
+    }
+    .status-complete {
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.15);
+    }
+    .status-pending {
+      background: rgba(245, 158, 11, 0.08);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.12);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-row {
+        flex-direction: column;
+        align-items: flex-start;
       }
-
-      .status-overdue {
-        background: rgba(220, 38, 38, 0.1);
-        color: #dc2626;
-        border: 1px solid rgba(220, 38, 38, 0.2);
+      .datetime-inline {
+        font-size: 14px;
       }
-
-      .status-complete {
-        background: rgba(34,197,94,0.1);
-        color: #22c55e;
-        border: 1px solid rgba(34,197,94,0.15);
+      .stat {
+        min-width: 120px;
       }
-
-      .status-pending {
-        background: rgba(245,158,11,0.08);
-        color: #f59e0b;
-        border: 1px solid rgba(245,158,11,0.12);
+      
+      /* Perbaikan tampilan tabel pada mobile */
+      .table-container {
+        overflow-x: auto;
       }
+      .table-container table {
+        min-width: 600px;
+      }
+    }
 
-      /* small responsive tweaks for table due column */
-      .due-date-cell {
-        display: flex;
+    /* Table borders */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 0.75rem;
+    }
+
+    /* Modal improvements */
+    .modal-box {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    .modal-box h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+    .form-control {
+      margin-bottom: 1rem;
+    }
+    .label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Mobile progress container */
+    @media (max-width: 767px) {
+      .progress-container {
+        background-color: #f8fafc;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+    }
+    
+    /* Empty state styling */
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+    }
+    
+    .empty-state i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    /* Footer styling - Diperbarui sesuai README */
+    .footer {
+      background-color: #f8fafc;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid #e2e8f0;
+      width: 100%;
+    }
+    
+    .footer-container {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .footer-banner {
+      width: 75%;
+      padding-right: 2rem;
+    }
+    
+    .footer-banner img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer-social {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .footer-social a {
+      display: block;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #4b5563;
+      transition: transform 0.3s;
+    }
+    
+    .footer-social a:hover {
+      transform: translateY(-3px);
+      color: #4f46e5;
+    }
+    
+    .footer-social img {
+      width: 140px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    
+    .footer-social a:hover img {
+      transform: scale(1.05);
+    }
+    
+    .footer-text {
+      text-align: center;
+      color: #6b7280;
+      font-size: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    
+    /* Responsive footer */
+    @media (max-width: 968px) {
+      .footer-container {
         flex-direction: column;
       }
-
-      /* make modal inputs full width on small screens */
-      @media (max-width: 640px) {
-        .datetime-inline {
-          font-size: 14px;
-        }
+      
+      .footer-banner, .footer-social {
+        width: 100%;
       }
-
-      .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.site-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.site-title img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.datetime-inline {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-.table-container {
-  max-height: 400px; /* tinggi body tabel */
-  overflow-y: auto;
-}
-
-.table-container thead th {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 2;
-}
-
-/* status badges */
-.status-badge {
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status-overdue {
-  background: rgba(220, 38, 38, 0.1);
-  color: #dc2626;
-  border: 1px solid rgba(220, 38, 38, 0.2);
-}
-
-.status-complete {
-  background: rgba(34, 197, 94, 0.1);
-  color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.15);
-}
-
-.status-pending {
-  background: rgba(245, 158, 11, 0.08);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.12);
-}
-
-.due-date-cell {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 640px) {
-  .datetime-inline {
-    font-size: 14px;
-  }
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Header */
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.site-title img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.datetime-inline {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-/* Table */
-.table-container {
-  max-height: 400px;
-  overflow-y: auto;
-}
-.table-container thead th {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 2;
-  white-space: normal; /* biar text wrap */
-}
-
-/* Status badges */
-.status-badge {
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.status-overdue {
-  background: rgba(220, 38, 38, 0.1);
-  color: #dc2626;
-  border: 1px solid rgba(220, 38, 38, 0.2);
-}
-.status-complete {
-  background: rgba(34, 197, 94, 0.1);
-  color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.15);
-}
-.status-pending {
-  background: rgba(245, 158, 11, 0.08);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.12);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .datetime-inline {
-    font-size: 14px;
-  }
-  .stat {
-    min-width: 120px;
-  }
-}
+      
+      .footer-banner {
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      
+      .footer-social {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .footer-social a {
+        margin-bottom: 1rem;
+        flex: 0 0 calc(33.333% - 1rem);
+      }
+      
+      .footer-social img {
+        width: 100px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .footer-social a {
+        flex: 0 0 calc(50% - 1rem);
+      }
+      
+      .footer-social img {
+        width: 80px;
+      }
+    }
+    
+    /* Zebra striping untuk tabel */
+    .table-zebra tbody tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+    
+    .table-zebra tbody tr:hover {
+      background-color: #f3f4f6;
+    }
